@@ -3,7 +3,7 @@ dnl $Id: config.m4 $
 dnl
 
 PHP_ARG_WITH(gnutls, for GnuTLS support,
-[  --with-gnutls[=DIR]    Include GnuTLS support (requires GnuTLS >= 0.9.6)])
+[  --with-gnutls[=DIR]    Include GnuTLS support (requires GnuTLS >= 2.12.14)])
 
 if test "$PHP_GNUTLS" != "no"; then
   PHP_NEW_EXTENSION(gnutls, gnutls.c, $ext_shared)
