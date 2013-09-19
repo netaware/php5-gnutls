@@ -6,6 +6,8 @@ if (!extension_loaded("gnutls")) die("skip");
 ?>
 --FILE--
 <?php
+$session = gnutls_init(GNUTLS_CLIENT);
+
 echo gnutls_check_version(null) . "\n";
 
 echo gnutls_error_is_fatal(GNUTLS_E_SUCCESS) . "\n";
@@ -16,6 +18,8 @@ echo gnutls_strerror(GNUTLS_E_INTERNAL_ERROR) . "\n";
 
 echo gnutls_strerror_name(GNUTLS_E_SUCCESS) . "\n";
 echo gnutls_strerror_name(GNUTLS_E_INTERNAL_ERROR) . "\n";
+
+gnutls_deinit($session);
 
 echo "OK!\n";
 
